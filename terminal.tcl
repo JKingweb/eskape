@@ -97,7 +97,7 @@ proc getArgs {cmd} {
 			}
 		} else {
 			#if no option has been seen before the first value, this is an error
-			if {![info exists opt]} {err 5}
+			if {$opt == ""} {err 5}
 			#if the list of values is restricted and the value we're seeing is not one of these, this is also an error
 			if {[llength $allowed]} {
 				set arg [string tolower $arg]
